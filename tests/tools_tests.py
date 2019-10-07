@@ -4,10 +4,10 @@ from python_speech_features import mfcc
 from fastdtw import fastdtw
 import numpy
 
-from speaker_verification_tools.tools import compute_distance
-from speaker_verification_tools.tools import extract_mfcc
-from speaker_verification_tools.tools import extract_mfcc_from_wav_file
-from speaker_verification_tools.tools import find_nearest_voice_data
+from speaker_verification_toolkit.tools import compute_distance
+from speaker_verification_toolkit.tools import extract_mfcc
+from speaker_verification_toolkit.tools import extract_mfcc_from_wav_file
+from speaker_verification_toolkit.tools import find_nearest_voice_data
 
 class Tests(unittest.TestCase):
 
@@ -43,6 +43,10 @@ class Tests(unittest.TestCase):
             ),
             1
         )
+    
+    def test_find_nearest_voice_data_empty_list_exception(self):
+        with self.assertRaises(Exception):
+            find_nearest_voice_data([], self.mfcc1)
 
 if __name__ == '__main__':
     unittest.main()

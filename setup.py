@@ -4,14 +4,14 @@ with open("README.md", "r") as fh:
     long_description = fh.read()
 
 setuptools.setup(
-    name="speaker_verification_tools",
+    name="speaker_verification_toolkit",
     version="0.0.1",
     author="Alohomora Team",
     author_email="alohomorafga@gmail.com",
     description="A package designed to compose speaker verification systems",
     long_description=long_description,
     long_description_content_type="text/markdown",
-    url="https://github.com/Alohomora-team/speaker-verification-tools",
+    url="https://github.com/Alohomora-team/speaker-verification-toolkit",
     packages=setuptools.find_packages(),
     classifiers=[
         "Programming Language :: Python :: 3",

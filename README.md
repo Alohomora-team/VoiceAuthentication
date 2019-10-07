@@ -1,14 +1,14 @@
-# speaker-verification-tools
+# speaker-verification-toolkit
 This module contains some tools to make a simple speaker verification.
 
 You can download it with PyPI:
 ```
-$ pip install speaker-verification-tools
+$ pip install speaker-verification-toolkit
 ```
 
 To use in your own projects:
 ```python
-import speaker_verification_tools.tools as svt
+import speaker_verification_toolkit.tools as svt
 ```
 
 ## Basic usage
@@ -19,6 +19,7 @@ find_nearest_voice_data(voice_data_list, voice_sample)
 Find the nearest voice data based on this voice sample. Could be used to make the naive Accept/Reject decision.
 
 > ***voice_data_list***: a list containing all voices data from the dataset.
+>
 > ***voice_sample***: the voice sample reference.
 
 > ***returns***: the index of the element from voice_data_list that represents the nearest voice data.
@@ -30,6 +31,7 @@ compute_distance(sample1, sample3)
 Compute the distance between sample1 and sample2 using O(n) DTW algorithm
 
 > ***sample1***: the mfcc data extracted from the audio signal 1.
+>
 > ***sample2***: the mfcc data extracted from the audio signal 2.
 
 > ***returns***: Float number representing the minimum distance between sample1 and sample2.
@@ -41,10 +43,13 @@ extract_mfcc(signal_data, samplerate=16000, winlen=0.025, winstep=0.01)
 Compute MFCC features from an audio signal
 
 > ***signal***: the audio signal from which to compute features. Should be an N*1 array.
-> ***samplerate***: the sample rate of the signal we are working with, in Hz.
-> ***winlen***: the length of the analysis window in seconds. Default is 0.025s (25 milliseconds).
-> ***winstep***: the step between successive windows in seconds. Default is 0.01s (10 milliseconds).
 >
+> ***samplerate***: the sample rate of the signal we are working with, in Hz.
+>
+> ***winlen***: the length of the analysis window in seconds. Default is 0.025s (25 milliseconds).
+>
+> ***winstep***: the step between successive windows in seconds. Default is 0.01s (10 milliseconds).
+
 > ***returns***: A numpy array of size (NUMFRAMES by numcep) containing features. Each row holds 1 feature vector.
 
 
@@ -54,8 +59,11 @@ extract_mfcc_from_wav_file(path, samplerate=16000, winlen=0.025, winstep=0.01)
 Compute MFCC features from a wav file
 
 > ***path***: the wav file path to be open.
-> ***samplerate***: the wanted sample rate, in Hz. Default is 16000. If you want no resampling fill this argument with None.
-> ***winlen***: the length of the analysis window in seconds. Default is 0.025s (25 milliseconds).
-> ***winstep***: the step between successive windows in seconds. Default is 0.01s (10 milliseconds).
 >
+> ***samplerate***: the wanted sample rate, in Hz. Default is 16000. If you want no resampling fill this argument with None.
+>
+> ***winlen***: the length of the analysis window in seconds. Default is 0.025s (25 milliseconds).
+>
+> ***winstep***: the step between successive windows in seconds. Default is 0.01s (10 milliseconds).
+
 > ***returns***: A numpy array of size (NUMFRAMES by numcep) containing features. Each row holds 1 feature vector.
