@@ -1,1 +1,0 @@
-name = "speaker_verification_tools"
