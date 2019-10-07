@@ -1,9 +1,0 @@
-README.md
-setup.py
-speaker_verification_tools/__init__.py
-speaker_verification_tools/tools.py
-speaker_verification_tools.egg-info/PKG-INFO
-speaker_verification_tools.egg-info/SOURCES.txt
-speaker_verification_tools.egg-info/dependency_links.txt
-speaker_verification_tools.egg-info/requires.txt
-speaker_verification_tools.egg-info/top_level.txt
