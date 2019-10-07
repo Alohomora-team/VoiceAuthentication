@@ -2,13 +2,13 @@
 This module contains some tools to make a simple speaker verification.
 
 You can download it with PyPI:
-$ pip3 install speaker_verification_tools
+```
+$ pip3 install speaker-verification-tools
 ```
 
 To use in your own projects:
 ```python
 import speaker_verification_tools.tools as svt
-
 ```
 
 ## Basic usage
