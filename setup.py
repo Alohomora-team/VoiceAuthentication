@@ -6,12 +6,12 @@ with open("README.md", "r") as fh:
 setuptools.setup(
     name="speaker_verification_tools",
     version="0.0.1",
-    author="Victor Silva",
-    author_email="victor.eng.unb@gmail.com",
+    author="Alohomora Team",
+    author_email="alohomorafga@gmail.com",
     description="A package designed to compose speaker verification systems",
     long_description=long_description,
     long_description_content_type="text/markdown",
-    url="https://github.com/VictorJorgeFGA/speaker-verification-tools",
+    url="https://github.com/Alohomora-team/speaker-verification-tools",
     packages=setuptools.find_packages(),
     classifiers=[
         "Programming Language :: Python :: 3",

@@ -3,7 +3,7 @@ This module contains some tools to make a simple speaker verification.
 
 You can download it with PyPI:
 ```
-$ pip3 install speaker-verification-tools
+$ pip install speaker-verification-tools
 ```
 
 To use in your own projects:
