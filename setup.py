@@ -18,5 +18,10 @@ setuptools.setup(
         "License :: OSI Approved :: MIT License",
         "Operating System :: OS Independent",
     ],
+    install_requires=[
+        'librosa==0.7.0',
+        'python_speech_features==0.6',
+        'fastdtw==0.3.2'
+    ],
     python_requires='>=3.6',
 )
