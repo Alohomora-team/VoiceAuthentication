@@ -51,7 +51,14 @@ class Tests(unittest.TestCase):
 
     def test_rms_silence_filter(self):
         data = [0.001135 for x in range(16000)] + [0.001140 for x in range(16000)]
-        self.assertListEqual(rms_silence_filter(data).tolist(), [0.001140 for x in range(16000)])
+        self.assertListEqual(
+            rms_silence_filter(data).tolist(),
+            [0.001140 for x in range(16000)]
+        )
+        self.assertListEqual(
+            rms_silence_filter(data, segment_length=160).tolist(),
+            [0.001140 for x in range(16000)]
+        )
 
 if __name__ == '__main__':
     unittest.main()

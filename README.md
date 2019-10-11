@@ -2,17 +2,19 @@
 This module contains some tools to make a simple speaker verification.
 
 You can download it with PyPI:
-```
+```r
 $ pip install speaker-verification-toolkit
 ```
 
-To use in your own projects:
+To import and use in your own projects:
 ```python
 import speaker_verification_toolkit.tools as svt
+
+#   svt.some_function(...)
 ```
 
-## Basic usage
-
+## Usage
+---
 ```python
 find_nearest_voice_data(voice_data_list, voice_sample)
 ```
@@ -23,7 +25,7 @@ Find the nearest voice data based on this voice sample. Could be used to make th
 > ***voice_sample***: the voice sample reference.
 
 > ***returns***: the index of the element from voice_data_list that represents the nearest voice data.
-
+---
 
 ```python
 compute_distance(sample1, sample3)
@@ -35,7 +37,7 @@ Compute the distance between sample1 and sample2 using O(n) DTW algorithm
 > ***sample2***: the mfcc data extracted from the audio signal 2.
 
 > ***returns***: Float number representing the minimum distance between sample1 and sample2.
-
+---
 
 ```python
 extract_mfcc(signal_data, samplerate=16000, winlen=0.025, winstep=0.01)
@@ -51,7 +53,7 @@ Compute MFCC features from an audio signal
 > ***winstep***: the step between successive windows in seconds. Default is 0.01s (10 milliseconds).
 
 > ***returns***: A numpy array of size (NUMFRAMES by numcep) containing features. Each row holds 1 feature vector.
-
+---
 
 ```python
 extract_mfcc_from_wav_file(path, samplerate=16000, winlen=0.025, winstep=0.01)
@@ -67,12 +69,13 @@ Compute MFCC features from a wav file
 > ***winstep***: the step between successive windows in seconds. Default is 0.01s (10 milliseconds).
 
 > ***returns***: A numpy array of size (NUMFRAMES by numcep) containing features. Each row holds 1 feature vector.
+---
 
 ```python
 rms_silence_filter(data, samplerate=16000, segment_length=None, threshold=0.001135)
 ```
-Cut off silence parts from the signal audio data. Doesn't work with signals data affected by severe environment noise.
-You would consider apply a noise filter before using this silence filter or make sure that environment noise is small enough.
+Cut off silence parts from the signal audio data. **Doesn't work with signals data affected by environment noise**.
+You would consider apply a noise filter before using this silence filter or make sure that environment noise is small enough to be considered as silence.
 
 >***data***: the audio signal data
 >
@@ -83,3 +86,7 @@ You would consider apply a noise filter before using this silence filter or make
 >***threshold***: the threshold value. Values less than or equal values will be cut off. The default value was defined at [1] (see the references).
 
 >***returns***: the param "data" without silence parts.
+
+# References
+
+[1] - Muhammad Asadullah & Shibli Nisar, "A SILENCE REMOVAL AND ENDPOINT DETECTION APPROACH FOR SPEECH PROCESSING", National University of Computer and Emerging Sciences, Peshawar
