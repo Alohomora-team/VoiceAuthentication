@@ -67,3 +67,19 @@ Compute MFCC features from a wav file
 > ***winstep***: the step between successive windows in seconds. Default is 0.01s (10 milliseconds).
 
 > ***returns***: A numpy array of size (NUMFRAMES by numcep) containing features. Each row holds 1 feature vector.
+
+```python
+rms_silence_filter(data, samplerate=16000, segment_length=None, threshold=0.001135)
+```
+Cut off silence parts from the signal audio data. Doesn't work with signals data affected by severe environment noise.
+You would consider apply a noise filter before using this silence filter or make sure that environment noise is small enough.
+
+>***data***: the audio signal data
+>
+>***samplerate***: if no segment_length is given, segment_length will be equals samplerate/100 (around 0.01 secs per segment).
+>
+>***segment_length***: the number of frames per segment. I.e. for a sample rate SR, a segment length equals SR/100 will represent a chunk containing 0.01 seconds of audio.
+>
+>***threshold***: the threshold value. Values less than or equal values will be cut off. The default value was defined at [1] (see the references).
+
+>***returns***: the param "data" without silence parts.
