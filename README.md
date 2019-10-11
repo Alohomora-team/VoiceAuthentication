@@ -14,7 +14,7 @@ import speaker_verification_toolkit.tools as svt
 ```
 
 ## Usage
----
+
 ```python
 find_nearest_voice_data(voice_data_list, voice_sample)
 ```
@@ -28,7 +28,7 @@ Find the nearest voice data based on this voice sample. Could be used to make th
 ---
 
 ```python
-compute_distance(sample1, sample3)
+compute_distance(sample1, sample2)
 ```
 Compute the distance between sample1 and sample2 using O(n) DTW algorithm
 
@@ -81,9 +81,9 @@ You would consider apply a noise filter before using this silence filter or make
 >
 >***samplerate***: if no segment_length is given, segment_length will be equals samplerate/100 (around 0.01 secs per segment).
 >
->***segment_length***: the number of frames per segment. I.e. for a sample rate SR, a segment length equals SR/100 will represent a chunk containing 0.01 seconds of audio.
+>***segment_length***: the number of frames per segment. I.e. for a sample rate SR, a segment length equal SR/100 will represent a chunk containing 0.01 seconds of audio.
 >
->***threshold***: the threshold value. Values less than or equal values will be cut off. The default value was defined at [1] (see the references).
+>***threshold***: the threshold value. Values less than or equal will be cut off. The default value was defined at [1] (see the references).
 
 >***returns***: the param "data" without silence parts.
 
