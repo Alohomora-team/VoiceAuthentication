@@ -59,6 +59,3 @@ class Tests(unittest.TestCase):
             rms_silence_filter(data, segment_length=160).tolist(),
             [0.001140 for x in range(16000)]
         )
-
-if __name__ == '__main__':
-    unittest.main()
