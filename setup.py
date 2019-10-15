@@ -5,7 +5,7 @@ with open("README.md", "r") as fh:
 
 setuptools.setup(
     name="speaker_verification_toolkit",
-    version="0.0.1",
+    version="0.0.2",
     author="Alohomora Team",
     author_email="alohomorafga@gmail.com",
     description="A package designed to compose speaker verification systems",

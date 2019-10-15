@@ -8,6 +8,7 @@ from speaker_verification_toolkit.tools import compute_distance
 from speaker_verification_toolkit.tools import extract_mfcc
 from speaker_verification_toolkit.tools import extract_mfcc_from_wav_file
 from speaker_verification_toolkit.tools import find_nearest_voice_data
+from speaker_verification_toolkit.tools import rms_silence_filter
 
 class Tests(unittest.TestCase):
 
@@ -48,5 +49,13 @@ class Tests(unittest.TestCase):
         with self.assertRaises(Exception):
             find_nearest_voice_data([], self.mfcc1)
 
-if __name__ == '__main__':
-    unittest.main()
+    def test_rms_silence_filter(self):
+        data = [0.001135 for x in range(16000)] + [0.001140 for x in range(16000)]
+        self.assertListEqual(
+            rms_silence_filter(data).tolist(),
+            [0.001140 for x in range(16000)]
+        )
+        self.assertListEqual(
+            rms_silence_filter(data, segment_length=160).tolist(),
+            [0.001140 for x in range(16000)]
+        )
